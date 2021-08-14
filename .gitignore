@@ -1,3 +1,4 @@
 /.idea
 /apps/*/*/node_modules
 /apps/bases/*.js
+/apps/bases/*/*.js
