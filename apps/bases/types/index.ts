@@ -1,3 +1,11 @@
 (() => {
-    console.log('hi there!')
+
+    function callBatman(): void {
+
+    }
+
+    const a = callBatman()
+
+    console.log(a)
+
 })()

@@ -15,7 +15,7 @@
     //Function Scope
     const printNumbers = () => {
         for (let i = 0; i < 10; i++) {
-            console.log(i);
+            setTimeout(() => console.log(i), 100)
         }
     }
     printNumbers()
