@@ -1,2 +1,2 @@
 watch:
-	npm run watch
+	tsc -w

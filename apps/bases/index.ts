@@ -1,6 +1,8 @@
 ((): void => {
-    // store it in function-type.ts
+    // folder => objects
+    // store it in union-types.ts
 
-    console.log('ddd with package.json')
+    console.log('ddd')
+
 })();
 
