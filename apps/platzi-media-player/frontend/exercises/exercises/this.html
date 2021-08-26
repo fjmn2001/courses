@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Closures</title>
+</head>
+<body>
+<a href="./exercises/">Go back</a>
+<p><em>Abre la consola</em></p>
+<script>
+    //Global scope
+    console.log(`this: ${this}`)
+
+    //Function scope
+    function whoisThis() {
+        return this;
+    }
+
+    console.log(`this: ${whoisThis()}`)
+
+    //Function scope with strict
+    function whoisThisWithScrict() {
+        'use strict'
+        return this;
+    }
+
+    console.log(`this: ${whoisThisWithScrict()}`)
+
+    //Object context
+    const person = {
+        name: 'Francisco',
+        greet() {
+            console.log(`Hello, I am ${this.name}`)
+        }
+    }
+    person.greet()
+
+    //Object context v2
+    const greet = person.greet;
+    greet()
+
+    //Class context
+    function Person(name) {
+        this.name = name
+    }
+
+    Person.prototype.greet = function () {
+        console.log(`My name is ${this.name}`)
+    }
+    const francisco = new Person('Francisco')
+    francisco.greet()
+
+</script>
+</body>
+</html>
