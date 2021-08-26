@@ -80,6 +80,6 @@
         /* Disallow inconsistently-cased references to the same file. */
     },
     "exclude": [
-        "node_modules"
+        "data/heros.ts"
     ]
 }
