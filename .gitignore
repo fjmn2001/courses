@@ -1,5 +1,6 @@
 /.idea
 /apps/*/*/node_modules
 /apps/bases/*.js
+/apps/bases/*.map
 /apps/bases/*/*.js
 apps/*/node_modules/

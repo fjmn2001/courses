@@ -2,7 +2,7 @@
     // folder => objects
     // store it in union-types.ts
 
-    console.log('ddd')
+    console.log('ddd2')
 
 })();
 

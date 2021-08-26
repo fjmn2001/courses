@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Call, apply and bind</title>
+</head>
+<body>
+<a href="./exercises/">Go back</a>
+<p><em>Abre la consola</em></p>
+<script>
+    function greet() {
+        console.log(`Hello, my name is ${this.firstName} ${this.lastName}`)
+    }
+
+    const francisco = {
+        firstName: 'Francisco',
+        lastName: 'Marcano'
+    }
+    greet.call(francisco);
+
+    function walk(mts, address) {
+        console.log(`${this.firstName} walks ${mts} mts to ${address}`)
+    }
+
+    walk.call(francisco, 400, 'Vnzla');
+    walk.apply(francisco, [800, 'Col']);
+
+    const edith = {
+        firstName: 'Edith',
+        lastName: 'Balbouze'
+    }
+    const edithGreet = greet.bind(edith)
+    edithGreet()
+
+</script>
+</body>
+</html>
