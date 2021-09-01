@@ -10,9 +10,17 @@
             private realName?: string
         ) {
         }
+
+        public bio() {
+            return `${this.name} (${this.team})`
+        }
     }
 
     const antman: Avenger = new Avenger('Antman', 'Cap', 'Scott Lang')
 
-    console.log(antman, Avenger.averageAge)
+    console.log(
+        antman,
+        Avenger.averageAge,
+        antman.bio()
+    )
 })()
