@@ -80,7 +80,7 @@
         /* Disallow inconsistently-cased references to the same file. */
     },
     "include": [
-        "class/abstract.ts"
+        "class/private-constructs.ts"
     ],
     "exclude": [
         "data/heros.ts"
