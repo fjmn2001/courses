@@ -19,6 +19,5 @@
         getName: () => superman.name
     }
 
-
-    console.log(flash, superman)
+    //console.log(flash, superman)
 })()
