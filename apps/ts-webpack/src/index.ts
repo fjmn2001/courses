@@ -1,15 +1,9 @@
-import {Hero} from "./class/Hero";
-import powers from "./data/powers";
+import {genericFunction, genericFunctionArrow, printObject} from "./generics/generics";
 
+printObject(1233)
 
-const ironman: Hero = new Hero('Ironman', 1, 55)
+console.log(genericFunction(3.1416).toFixed(2))
+console.log(genericFunction('3.1416').toUpperCase())
 
-
-console.log(ironman.power);
-console.log(powers)
-
-
-
-
-
-
+console.log(genericFunctionArrow(3.1416).toFixed(2))
+console.log(genericFunctionArrow('3.1416').toUpperCase())
