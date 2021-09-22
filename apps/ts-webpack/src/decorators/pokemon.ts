@@ -16,6 +16,19 @@ const closePrototype = function (constructor: Function) {
     Object.seal(constructor.prototype)
 }
 
+const checkValidaPokemonId = function () {
+    return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+        const originalMethod = descriptor.value
+        descriptor.value = (id: number) => {
+            if (id < 1 || id > 800) {
+                return console.error('Invalid Pokemon Id.')
+            } else {
+                return originalMethod(id)
+            }
+        }
+    }
+}
+
 @closePrototype
 @printToConsoleConditional(true)
 export class Pokemon {
@@ -23,5 +36,10 @@ export class Pokemon {
         public name: string,
         public publicApi: string = 'https://pokeapi.co'
     ) {
+    }
+
+    @checkValidaPokemonId()
+    savePokemon(id: number) {
+        console.log(`Pokemon saved ${id}`)
     }
 }
