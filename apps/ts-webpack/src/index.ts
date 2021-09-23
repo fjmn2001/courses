@@ -7,4 +7,4 @@ const charmander = new Pokemon('Charmander');
 
 console.log(charmander)
 
-charmander.savePokemon(5000)
+// charmander.savePokemon(5000)

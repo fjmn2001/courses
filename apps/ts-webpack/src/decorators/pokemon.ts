@@ -29,13 +29,37 @@ const checkValidaPokemonId = function () {
     }
 }
 
+const readonly = function (isWritable: boolean = false): Function {
+    return function (target: any, propertyKey: string) {
+        const descriptor: PropertyDescriptor = {
+            get() {
+                return 'Francisco'
+            },
+            set(this, value) {
+                Object.defineProperty(this, propertyKey, {
+                    value,
+                    writable: isWritable,
+                    enumerable: false
+                })
+            }
+        }
+
+        return descriptor
+    }
+}
+
 @closePrototype
 @printToConsoleConditional(true)
 export class Pokemon {
+
+    @readonly(true)
+    public publicApi: string = 'https://pokeapi.co';
+
     constructor(
         public name: string,
-        public publicApi: string = 'https://pokeapi.co'
+        publicApi: string = 'https://pokeapi.co'
     ) {
+        this.publicApi = publicApi;
     }
 
     @checkValidaPokemonId()
