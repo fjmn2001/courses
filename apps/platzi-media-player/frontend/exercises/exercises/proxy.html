@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Proxy</title>
+</head>
+<body>
+<a href="./exercises/">Go back</a>
+<p><em>Abre la consola</em></p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/levenshtein/1.0.5/levenshtein.min.js"
+        integrity="sha512-33ylHAa4zDN8/pTirwhJNeRSO59Le/klF+6oEwgBMOpWpwVa4b0dNKXuzB3TrIWqI/Rff9iDczybhFPCeVGDrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    const target = {
+        red: 'Red',
+        green: 'Green',
+        yellow: 'Yellow'
+    };
+
+    const handler = {
+        get(object, property) {
+            if (property in object) {
+                return object[property]
+            }
+
+            const suggestion = Object.keys(object).find(key => {
+                return Levenshtein(key, property) <= 3;
+            })
+
+            if (suggestion) {
+                console.log(`${property} does not exists. Do you mean ${suggestion}?`)
+            }
+
+            return object[property]
+        }
+    }
+
+    const proxy = new Proxy(target, handler);
+
+    console.log(window.Levenshtein('JavaScript', 'Java'))
+</script>
+</body>
+</html>
