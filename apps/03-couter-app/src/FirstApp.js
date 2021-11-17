@@ -1,12 +1,26 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-const FirstApp = () => {
+const FirstApp = ({greeting, subtitle}) => {
+
+    if (!greeting) {
+        throw new Error("The greeting is required.");
+    }
+
     return (
         <>
-            <h1>Hi there!</h1>
-            <p>This is a paragraph</p>
+            <h1>{greeting}</h1>
+            <p>{subtitle}</p>
         </>
     )
+}
+
+FirstApp.propTypes = {
+    greeting: PropTypes.string.isRequired
+}
+
+FirstApp.defaultProps = {
+    subtitle: 'I am a subtitle'
 }
 
 export default FirstApp;
