@@ -18,7 +18,7 @@ const AddCategory = ({setCategories}: AddCategoryProps) => {
             return;
         }
 
-        setCategories((categories) => [...categories, inputValue])
+        setCategories((categories) => [inputValue, ...categories])
         setInputValue('')
     }
 
