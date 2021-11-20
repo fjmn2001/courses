@@ -1,4 +1,5 @@
 import {useState} from "react";
+import AddCategory from "./components/AddCategory";
 
 const GifExpertApp = () => {
     const [categories, setCategories] = useState([
@@ -7,17 +8,11 @@ const GifExpertApp = () => {
         'Dragon Ball'
     ])
 
-    const handleAdd = () => {
-        const randomString = (Math.random() + 1).toString(36).substring(7);
-        setCategories([...categories, ...[randomString]])
-    }
-
     return (
         <>
             <h2>GifExpertApp</h2>
+            <AddCategory setCategories={setCategories}/>
             <hr/>
-
-            <button onClick={handleAdd}>Add</button>
 
             <ol>
                 {categories.map(category => {
