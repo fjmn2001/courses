@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import {CustomGif} from "../interfaces";
 import GifGridItem from "./GifGridItem";
 import {getGifs} from "../helpers/getGifs";
+import {useFetchGifs} from "../hooks/useFetchGifs";
 
 interface GifGridProps {
     category: string
@@ -9,6 +10,8 @@ interface GifGridProps {
 
 const GifGrid = ({category}: GifGridProps) => {
 
+    const {loading} = useFetchGifs(category)
+    console.log(loading)
     const [images, setImages] = useState([])
 
     useEffect(() => {
@@ -18,6 +21,7 @@ const GifGrid = ({category}: GifGridProps) => {
     return (
         <>
             <h3>{category}</h3>
+            {loading ? 'Loading' : 'Done'}
             <div className={'card-grid'}>
                 {images.map((gif: CustomGif) => {
                     return <GifGridItem
