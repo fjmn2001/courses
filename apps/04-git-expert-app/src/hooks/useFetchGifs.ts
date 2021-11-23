@@ -14,7 +14,7 @@ export const useFetchGifs = (category: string) => {
                 loading: false
             })
         })
-    }, [])
+    }, [category])
 
     return state
 }
