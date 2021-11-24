@@ -1,6 +1,7 @@
 import {CustomGif} from "../interfaces";
 import GifGridItem from "./GifGridItem";
 import {useFetchGifs} from "../hooks/useFetchGifs";
+import PropTypes from "prop-types";
 
 interface GifGridProps {
     category: string
@@ -25,6 +26,10 @@ const GifGrid = ({category}: GifGridProps) => {
             </div>
         </>
     )
+}
+
+GifGrid.propTypes = {
+    category: PropTypes.string.isRequired
 }
 
 export default GifGrid;
