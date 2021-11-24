@@ -1,4 +1,5 @@
 import {ChangeEvent, Dispatch, FormEvent, SetStateAction, useState} from "react";
+import PropTypes from "prop-types";
 
 interface AddCategoryProps {
     setCategories: Dispatch<SetStateAction<string[]>>
@@ -31,6 +32,10 @@ const AddCategory = ({setCategories}: AddCategoryProps) => {
             />
         </form>
     );
+}
+
+AddCategory.propTypes = {
+    setCategories: PropTypes.func.isRequired
 }
 
 export default AddCategory;
