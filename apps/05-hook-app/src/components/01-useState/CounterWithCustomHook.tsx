@@ -3,7 +3,7 @@ import {useCounter} from "../../hooks/useCounter";
 
 export const CounterWithCustomHook = () => {
 
-    const {state: counter, increment, decrement, reset} = useCounter(10)
+    const {counter, increment, decrement, reset} = useCounter(10)
 
     return (
         <>

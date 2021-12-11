@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {SimpleForm} from "./components/02-useEffect/SimpleForm";
+import {FocusScreen} from "./components/04-useRef/FocusScreen";
 
 ReactDOM.render(
-    <SimpleForm/>,
+    <FocusScreen/>,
     document.getElementById('root')
 );
